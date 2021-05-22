@@ -1,0 +1,53 @@
+﻿@model ContosoUniversity1.Models.Stage
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Stage</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="titre" class="control-label"></label>
+                <input asp-for="titre" class="form-control" />
+                <span asp-validation-for="titre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="description" class="control-label"></label>
+                <input asp-for="description" class="form-control" />
+                <span asp-validation-for="description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="debut" class="control-label"></label>
+                <input asp-for="debut" class="form-control" />
+                <span asp-validation-for="debut" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="fin" class="control-label"></label>
+                <input asp-for="fin" class="form-control" />
+                <span asp-validation-for="fin" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="etat" class="control-label"></label>
+                <input asp-for="etat" class="form-control" />
+                <span asp-validation-for="etat" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
