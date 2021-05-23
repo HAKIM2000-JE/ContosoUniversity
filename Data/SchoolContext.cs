@@ -1,4 +1,4 @@
-﻿using ContosoUniversity1.Models;
+using ContosoUniversity1.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace ContosoUniversity1.Data
@@ -17,6 +17,7 @@ namespace ContosoUniversity1.Data
         public DbSet<OfficeAssignment> OfficeAssignments { get; set; }
         public DbSet<CourseAssignment> CourseAssignments { get; set; }
         public DbSet<Stage> Stages { get; set; }
+        public DbSet<Demande> Demandes  { get; set; }
         // public DbSet<Person> People { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -29,6 +30,7 @@ namespace ContosoUniversity1.Data
             modelBuilder.Entity<OfficeAssignment>().ToTable("OfficeAssignment");
             modelBuilder.Entity<CourseAssignment>().ToTable("CourseAssignment");
             modelBuilder.Entity<Stage>().ToTable("Stage");
+            modelBuilder.Entity<Demande>().ToTable("Demande");
            // modelBuilder.Entity<Person>().ToTable("Person");
 
             modelBuilder.Entity<CourseAssignment>()
