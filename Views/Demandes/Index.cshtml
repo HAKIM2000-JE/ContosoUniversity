@@ -1,0 +1,47 @@
+﻿@model IEnumerable<ContosoUniversity1.Models.Demande>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ID_stage)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ID_student)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.etat)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ID_stage)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ID_student)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.etat)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.DemandeID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.DemandeID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.DemandeID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
